@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor
 from fastapi import FastAPI, UploadFile, HTTPException
-from fastapi.responses import FileResponse
+from fastapi.responses import RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.concurrency import run_in_threadpool
 from PIL import Image, ImageOps, UnidentifiedImageError
@@ -38,7 +38,11 @@ async def response_headers(request,call_next):
 def health(): return {'ok':True,'vision':vision.status,'physics':'pvlib SPA / Ineichen','on_demand':is_serverless(),'upload_limit_mb':4 if is_serverless() else 20}
 
 @app.get('/api/samples')
-def samples(): return json.loads((ROOT/'public'/'samples'/'index.json').read_text())
+def samples():
+    manifest=ROOT/'public'/'samples'/'index.json'
+    if manifest.is_file(): return json.loads(manifest.read_text())
+    # Vercel serves public/ from its CDN and omits it from the Python bundle.
+    return RedirectResponse('/samples/index.json')
 
 def run_job(key,image):
     def progress(value,label):
@@ -99,4 +103,5 @@ def simulation(request:SimulationRequest):
     except Exception as e:
         logging.exception('Simulation failed'); raise HTTPException(422,'Unable to simulate these settings. Check date, timezone and polygons.') from e
 
-app.mount('/',StaticFiles(directory=ROOT/'public',html=True),name='frontend')
+if (ROOT/'public').is_dir():
+    app.mount('/',StaticFiles(directory=ROOT/'public',html=True),name='frontend')

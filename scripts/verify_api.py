@@ -11,7 +11,7 @@ def main():
     args=parser.parse_args();base=args.base.rstrip('/')
     out=ROOT/'runtime';out.mkdir(exist_ok=True)
     client=httpx.Client(timeout=300,verify=ssl.create_default_context(),follow_redirects=True)
-    health=client.get(base+'/api/health').json();print('health',health)
+    response=client.get(base+'/api/health');response.raise_for_status();health=response.json();print('health',health,flush=True)
     bad=client.post(base+'/api/analyze',files={'file':('bad.png',b'not an image','image/png')});assert bad.status_code==422;print('corrupt upload',bad.status_code)
     for sample in client.get(base+'/api/samples').json():
         response=client.get(base+sample['url']);response.raise_for_status();image=response.content
