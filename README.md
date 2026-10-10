@@ -18,6 +18,9 @@ Solo developer: **Planetech0071**. Original project code created on October 11, 
 
 ## Try it
 
+**Live app:** https://solarshift-seven.vercel.app  
+**Source:** https://github.com/Planetech0071/SolarShift
+
 1. Choose Davis or Sacramento, or upload a JPG, PNG or WEBP aerial photograph.
 2. Click **Analyze location**. The backend runs actual RF-DETR instance segmentation; no sample polygons are substituted.
 3. Select a rooftop on the image or from the ranked list. Move the timeline from morning to evening.
@@ -115,7 +118,9 @@ This is a preliminary planning tool. One image does not establish heights, roof 
 
 The clear-sky scenario excludes clouds, terrain horizon, module temperature, diffuse occlusion, string-level electrical losses and annual weather. Heights are absolute above an assumed level ground plane; tilted panel orientation changes irradiance, while shade sampling uses a flat receiving roof plane. Objects beyond the image extent are unknown. Existing panels are not subtracted. No engineering or financial accuracy is claimed. Two real scenes were exercised; no ground-truth segmentation benchmark or broad generalization study was performed.
 
-Uploads are processed in memory. The browser keeps the original image locally; server job results expire after one hour. There are no paid runtime API calls, persistent image database, authentication or multi-user project storage. The supplied server is suitable for demonstrations; durable hosting needs the provided container and an account.
+Uploads are processed in memory. The browser keeps the original image locally; local server job results expire after one hour. There are no paid runtime API calls, persistent image database, authentication or multi-user project storage.
+
+The Vercel deployment uses CPU inference and returns analysis directly in its request, so no background job state needs to survive between requests. Hosted uploads are limited to 4 MB; local uploads support 20 MB. The model is bundled during the build. See `DEPLOYMENT.md` for the hosting configuration and verification record.
 
 ## Submission materials
 

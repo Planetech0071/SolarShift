@@ -7,7 +7,7 @@
 - [x] Project story in `DEVPOST.md` and elevator pitch prepared.
 - [x] Captioned 2:40 MP4 and live narration script prepared.
 - [x] GitHub and Vercel deployment configuration prepared.
-- [ ] Confirm the final public repository and live demo URLs in `DEPLOYMENT.md`.
+- [x] Confirm the final public repository and live demo URLs in `DEPLOYMENT.md`.
 - [ ] Upload the video to an accessible video host and add its link to the submission.
 - [ ] Review and paste the project description, screenshots, repository and demo links into the submission portal.
 - [ ] Confirm team details, eligibility and submission deadline in the actual portal.

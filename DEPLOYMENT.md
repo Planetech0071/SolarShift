@@ -2,6 +2,16 @@
 
 SolarShift is one HTTP service: frontend plus FastAPI analysis. No paid keys are needed. Model weights are public and cached locally.
 
+## Published links
+
+- Production app: https://solarshift-seven.vercel.app
+- Public source: https://github.com/Planetech0071/SolarShift
+- Production branch: `codex/solarshift`
+
+GitHub is connected to the separate SolarShift Vercel project. A push to the production branch starts a new production build. Deployment credentials, local environments, uploads and model caches are excluded from the source repository.
+
+Verified publicly on October 11, 2026 (Europe/Rome): both real sample analyses completed with 13 and 38 roof candidates, positive daytime energy and zero nighttime output. The browser timeline and rooftop results also passed. See `TEST_RESULTS.md` for measured results.
+
 ## Vercel
 
 `app.py`, `pyproject.toml` and `vercel.json` configure FastAPI on Vercel. Python 3.12 and CPU-only PyTorch wheels are used. The build script downloads the pinned public model into the function bundle. The project uses Vercel Fluid Compute and its large-function support; no external paid inference API is involved.
@@ -16,7 +26,7 @@ Deploy from this directory using a separate SolarShift Vercel project:
 vercel deploy --prod --yes
 ```
 
-The production URL will be recorded here after a successful deployment and live analysis check.
+Vercel serves the frontend and sample imagery from its CDN. The Python function reads the bundled model and exposes the analysis and physics endpoints; it does not require a runtime `public/` directory.
 
 ## Local demonstration
 
@@ -58,4 +68,4 @@ During the initial build, localhost.run established SSH forwarding but the publi
 
 ## GitHub
 
-The source repository is intended to be public at https://github.com/Planetech0071/SolarShift. Public GitHub publication is checked independently of cloud hosting. SolarShift uses its own Vercel project and does not replace the existing Shieldio deployment.
+The source repository is public at https://github.com/Planetech0071/SolarShift. Public GitHub publication is checked independently of cloud hosting. SolarShift uses its own Vercel project and does not replace the existing Shieldio deployment.
