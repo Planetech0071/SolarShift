@@ -1,0 +1,48 @@
+[
+  {
+    "id": "davis",
+    "name": "Davis \u00b7 California",
+    "latitude": 38.5465,
+    "longitude": -121.7442,
+    "timezone": "America/Los_Angeles",
+    "meters_per_pixel": 0.18333333333333332,
+    "north_angle": 0,
+    "url": "/samples/davis.jpg",
+    "source": "USGS National Map orthoimagery / USDA NAIP",
+    "license": "US government public domain imagery; see ATTRIBUTION.md",
+    "download_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13552642.99752861%2C4656812.726084165%2C-13552361.704540303%2C4657023.695825396&bboxSR=3857&imageSR=3857&size=1200%2C900&format=jpg&f=image",
+    "extent_epsg3857": [
+      -13552642.99752861,
+      4656812.726084165,
+      -13552361.704540303,
+      4657023.695825396
+    ],
+    "dimensions": [
+      1200,
+      900
+    ]
+  },
+  {
+    "id": "sacramento",
+    "name": "Sacramento \u00b7 California",
+    "latitude": 38.5721,
+    "longitude": -121.489,
+    "timezone": "America/Los_Angeles",
+    "meters_per_pixel": 0.18333333333333332,
+    "north_angle": 0,
+    "url": "/samples/sacramento.jpg",
+    "source": "USGS National Map orthoimagery / USDA NAIP",
+    "license": "US government public domain imagery; see ATTRIBUTION.md",
+    "download_url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?bbox=-13524234.313579721%2C4660457.077548698%2C-13523952.920388306%2C4660668.1224422585&bboxSR=3857&imageSR=3857&size=1200%2C900&format=jpg&f=image",
+    "extent_epsg3857": [
+      -13524234.313579721,
+      4660457.077548698,
+      -13523952.920388306,
+      4660668.1224422585
+    ],
+    "dimensions": [
+      1200,
+      900
+    ]
+  }
+]

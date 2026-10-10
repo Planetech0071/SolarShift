@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+.pytest_cache/
+models/
+runtime/
+.env
+.env.*
+!.env.example
+.vercel/
+node_modules/
+*.log
+.tools/
+DEMO_ASSETS/recording.webm
+DEMO_ASSETS/frames/
+public/_qa.html

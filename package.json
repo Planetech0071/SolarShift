@@ -1,0 +1,4 @@
+{
+  "name": "solarshift", "version": "1.0.0", "private": true, "type": "module",
+  "scripts": {"dev": "python -m uvicorn backend.app:app --host 127.0.0.1 --port 8000", "test": "python -m pytest tests -q"}
+}

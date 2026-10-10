@@ -1,0 +1,9 @@
+.venv
+.git
+models
+runtime
+.tools
+DEMO_ASSETS
+.cache
+__pycache__
+.env*

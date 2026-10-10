@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:15,000
+SOLARSHIFT
+Turn any rooftop into solar intelligence.
+
+2
+00:00:15,000 --> 00:00:30,000
+Real aerial pixels → pretrained RF-DETR building masks
+Captured from the running application.
+
+3
+00:00:30,000 --> 00:00:48,000
+Roof area, estimated capacity and clear-sky daily energy
+All calculated from the detected geometry and editable assumptions.
+
+4
+00:00:48,000 --> 00:01:13,000
+Move through a real computed solar day.
+Sun direction, shadows, irradiance and rooftop power change together.
+
+5
+00:01:13,000 --> 00:01:25,000
+Before sunrise and after sunset:
+Sun below the horizon → zero modeled production.
+
+6
+00:01:25,000 --> 00:01:45,000
+Review the geometry. Drag vertices or add a manual region.
+Height, scale and roof tilt are assumptions that users can correct.
+
+7
+00:01:45,000 --> 00:02:05,000
+Compare total generation and kWh per installed kWp.
+Larger roofs and better exposure answer different planning questions.
+
+8
+00:02:05,000 --> 00:02:25,000
+NREL solar position + Ineichen irradiance + geometric shadows.
+Preliminary clear-sky planning; weather and unknown structures are excluded.
+
+9
+00:02:25,000 --> 00:02:40,000
+Real segmentation. Editable geometry. Solar physics.
+github.com/Planetech0071/SolarShift
